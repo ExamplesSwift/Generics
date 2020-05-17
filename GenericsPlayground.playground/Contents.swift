@@ -32,6 +32,10 @@ stackOfName.push(item: "Susan")
 stackOfName.push(item: "George")
 stackOfName.push(item: "Jessica")
 
+var stackOfNumbers = Stack()
+stackOfNumbers.push(item: 14)
+
+
 while let name = stackOfName.pop() {
   print("popping name: \(name)")
 }
