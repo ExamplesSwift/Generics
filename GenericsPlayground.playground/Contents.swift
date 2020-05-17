@@ -1,9 +1,9 @@
 import UIKit
 
 // this a example of simple Stack
-struct Stack: CustomStringConvertible {
+struct Stack<T>: CustomStringConvertible {
   
-  private var items: [Any]
+  private var items: [T]
   
   var description: String {
     return "\(items)"
@@ -17,24 +17,24 @@ struct Stack: CustomStringConvertible {
     items = []
   }
   
-  mutating func pop() -> Any? {
+  mutating func pop() -> T? {
     return !isEmpty ? items.removeLast() : nil
   }
   
-  mutating func push(item: Any) {
+  mutating func push(item: T) {
     items.append(item)
   }
 }
 
-var stackOfName = Stack()
+var stackOfName = Stack<String>()
 stackOfName.push(item: "Mary")
 stackOfName.push(item: "Susan")
 stackOfName.push(item: "George")
 stackOfName.push(item: "Jessica")
 
-var stackOfNumbers = Stack()
-stackOfNumbers.push(item: 14)
-stackOfNumbers.push(item: "Henry AT")
+var stackOfNumbers = Stack<Int>()
+stackOfNumbers.push(item: 25)
+stackOfNumbers.push(item: 84)
 
 
 while let name = stackOfName.pop() {
