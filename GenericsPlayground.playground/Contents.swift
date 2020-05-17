@@ -3,7 +3,7 @@ import UIKit
 // this a example of simple Stack
 struct Stack: CustomStringConvertible {
   
-  private var items: [String]
+  private var items: [Any]
   
   var description: String {
     return "\(items)"
@@ -17,11 +17,11 @@ struct Stack: CustomStringConvertible {
     items = []
   }
   
-  mutating func pop() -> String? {
+  mutating func pop() -> Any? {
     return !isEmpty ? items.removeLast() : nil
   }
   
-  mutating func push(item: String) {
+  mutating func push(item: Any) {
     items.append(item)
   }
 }
@@ -34,8 +34,13 @@ stackOfName.push(item: "Jessica")
 
 var stackOfNumbers = Stack()
 stackOfNumbers.push(item: 14)
+stackOfNumbers.push(item: "Henry AT")
 
 
 while let name = stackOfName.pop() {
   print("popping name: \(name)")
+}
+
+while let item = stackOfNumbers.pop() {
+  print("popping name: \(item)")
 }
